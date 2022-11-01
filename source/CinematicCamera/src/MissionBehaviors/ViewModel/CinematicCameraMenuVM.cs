@@ -10,8 +10,7 @@ namespace CinematicCamera
     {
         private readonly CinematicCameraConfig _config = CinematicCameraConfig.Get();
 
-        private readonly SetPlayerHealthLogic _setPlayerHealthLogic =
-            Mission.Current.GetMissionBehavior<SetPlayerHealthLogic>();
+        //private readonly SetPlayerHealthLogic _setPlayerHealthLogic = Mission.Current.GetMissionBehavior<SetPlayerHealthLogic>();
 
         private NumericVM _verticalFov;
         //private NumericVM _zoom;
@@ -22,14 +21,14 @@ namespace CinematicCamera
 
         private NumericVM _depthOfFieldDistance, _depthOfFieldStart, _depthOfFieldEnd;
 
-        public string PlayerInvulnerableString { get; } = GameTexts.FindText("str_cinematic_camera_player_invulnerable").ToString();
+        //public string PlayerInvulnerableString { get; } = GameTexts.FindText("str_cinematic_camera_player_invulnerable").ToString();
         public string ResetString { get; } = GameTexts.FindText("str_cinematic_camera_reset").ToString();
 
         public string ZoomString { get; } = GameTexts.FindText("str_cinematic_camera_zoom").ToString();
 
         public string RotateSmoothModeString { get; } = GameTexts.FindText("str_cinematic_camera_rotate_smooth_mode").ToString();
 
-        public bool PlayerInvulnerable
+        /*public bool PlayerInvulnerable
         {
             get => _config.PlayerInvulnerable;
             set
@@ -40,7 +39,7 @@ namespace CinematicCamera
                 _setPlayerHealthLogic?.UpdateInvulnerable(_config.PlayerInvulnerable);
                 OnPropertyChanged(nameof(PlayerInvulnerable));
             }
-        }
+        }*/
 
         public NumericVM VerticalFov
         {
@@ -210,7 +209,7 @@ namespace CinematicCamera
 
         public override void RefreshValues()
         {
-            OnPropertyChanged(nameof(PlayerInvulnerable));
+            //OnPropertyChanged(nameof(PlayerInvulnerable));
             OnPropertyChanged(nameof(RotateSmoothMode));
             _verticalFov.OptionValue = _config.CameraFov;
             _speedFactor.OptionValue = _config.SpeedFactor;
@@ -222,6 +221,8 @@ namespace CinematicCamera
 
         public override void CloseMenu()
         {
+            MissionMenuViewBase.enable = true;
+
             _config.Serialize();
 
             base.CloseMenu();

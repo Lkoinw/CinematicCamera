@@ -1,6 +1,10 @@
-﻿using MissionSharedLibrary.View;
+﻿using MissionSharedLibrary.HotKey.Category;
+using MissionSharedLibrary.View;
+using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
+using TaleWorlds.ScreenSystem;
+using TaleWorlds.TwoDimension;
 
 namespace CinematicCamera.MissionBehaviors
 {
@@ -22,6 +26,25 @@ namespace CinematicCamera.MissionBehaviors
             return new CinematicCameraMenuVM(this.OnCloseMenu);
         }
 
+        public override void ActivateMenu()
+        {
+            MissionMenuViewBase.enable = false;
+            IsActivated = true;
+            DataSource = GetDataSource();
+            if (DataSource == null)
+                return;
+            GauntletLayer = new GauntletLayer(ViewOrderPriority) { IsFocusLayer = false };
+            GauntletLayer.InputRestrictions.SetInputRestrictions();
+            GauntletLayer.Input.RegisterHotKeyCategory(HotKeyManager.GetCategory("GenericPanelGameKeyCategory"));            
+            _movie = GauntletLayer.LoadMovie(_movieName, DataSource);
+            SpriteData spriteData = UIResourceManager.SpriteData;
+            TwoDimensionEngineResourceContext resourceContext = UIResourceManager.ResourceContext;
+            ResourceDepot uiResourceDepot = UIResourceManager.UIResourceDepot;
+            spriteData.SpriteCategories["ui_photomode"]?.Load(resourceContext, uiResourceDepot);
+            MissionScreen.AddLayer(GauntletLayer);
+            ScreenManager.TrySetFocus(GauntletLayer);
+        }
+
         public override void OnMissionScreenTick(float dt)
         {
             if (IsActivated)
@@ -31,7 +54,8 @@ namespace CinematicCamera.MissionBehaviors
                 DataSource.RefreshValues();
 
                 if (GauntletLayer.Input.IsKeyReleased(InputKey.RightMouseButton) && !_rightButtonDraggingMode
-                    || GauntletLayer.Input.IsHotKeyReleased("Exit"))
+                    || GauntletLayer.Input.IsHotKeyReleased("Exit")
+                    || GeneralGameKeyCategories.GetKey(GeneralGameKey.OpenMenu).IsKeyPressed(Input))
                     DeactivateMenu();
             }
 

@@ -13,28 +13,28 @@ namespace CinematicCamera
         {
             base.OnBehaviorInitialize();
 
-            Mission.OnMainAgentChanged += Mission_OnMainAgentChanged;
-            MissionEvent.MainAgentWillBeChangedToAnotherOne += MainAgentWillBeChangedToAnotherOne;
+            //Mission.OnMainAgentChanged += Mission_OnMainAgentChanged;
+            //MissionEvent.MainAgentWillBeChangedToAnotherOne += MainAgentWillBeChangedToAnotherOne;
         }
 
         public override void OnRemoveBehavior()
         {
             base.OnRemoveBehavior();
 
-            Mission.OnMainAgentChanged -= Mission_OnMainAgentChanged;
-            MissionEvent.MainAgentWillBeChangedToAnotherOne -= MainAgentWillBeChangedToAnotherOne;
+            //Mission.OnMainAgentChanged -= Mission_OnMainAgentChanged;
+            //MissionEvent.MainAgentWillBeChangedToAnotherOne -= MainAgentWillBeChangedToAnotherOne;
         }
 
         public override void OnMissionTick(float dt)
         {
             base.OnMissionTick(dt);
 
-            if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.TogglePlayerInvulnerable)
+            /*if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.TogglePlayerInvulnerable)
                 .IsKeyPressed(Mission.InputManager))
             {
                 _config.PlayerInvulnerable = !_config.PlayerInvulnerable;
                 UpdateInvulnerable(_config.PlayerInvulnerable);
-            }
+            }*/
             if (CinematicCameraGameKeyCategory.GetKey(GameKeyEnum.IncreaseDepthOfFieldDistance)
                 .IsKeyDown(Mission.InputManager))
             {
@@ -93,7 +93,7 @@ namespace CinematicCamera
             }
         }
 
-        private void MainAgentWillBeChangedToAnotherOne(Agent newAgent)
+        /*private void MainAgentWillBeChangedToAnotherOne(Agent newAgent)
         {
             if (_config.PlayerInvulnerable)
                 UpdateInvulnerable(false);
@@ -115,6 +115,6 @@ namespace CinematicCamera
             var agent = Mission.MainAgent;
             agent.SetMortalityState(invulnerable ? Agent.MortalityState.Immortal : Agent.MortalityState.Mortal);
             agent.MountAgent?.SetMortalityState(invulnerable ? Agent.MortalityState.Immortal : Agent.MortalityState.Mortal);
-        }
+        }*/
     }
 }

@@ -12,12 +12,12 @@
                   <Children>
 
                     <!-- PlayerInvulnerable -->
-                    <RichTextWidget Text="@PlayerInvulnerableString" WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="200" HorizontalAlignment="Right" VerticalAlignment="Center" PositionXOffset="35" Brush="PhotoMode.Property.Text" />
+                    <!--<RichTextWidget Text="@PlayerInvulnerableString" WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="200" HorizontalAlignment="Right" VerticalAlignment="Center" PositionXOffset="35" Brush="PhotoMode.Property.Text" />
                     <ButtonWidget IsSelected="@PlayerInvulnerable" ButtonType="Toggle" DoNotPassEventsToChildren="true" ToggleIndicator="ToggleIndicator" HorizontalAlignment="Left" VerticalAlignment="Center" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" MarginLeft="50" SuggestedWidth="40" SuggestedHeight="40" Brush="SPOptions.Checkbox.Empty.Button">
                       <Children>
                         <ImageWidget Id="ToggleIndicator" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="SPOptions.Checkbox.Full.Button" />
                       </Children>
-                    </ButtonWidget>
+                    </ButtonWidget>-->
 
                     <!-- RotateSmoothMode -->
                     <RichTextWidget Text="@RotateSmoothModeString" WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="200" HorizontalAlignment="Right" VerticalAlignment="Center" PositionXOffset="35" Brush="PhotoMode.Property.Text" />

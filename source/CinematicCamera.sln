@@ -1,24 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CinematicCamera", "CinematicCamera\CinematicCamera.csproj", "{73A588CC-F638-46E0-B2D6-BB544E555802}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BasicSharedLibrary", "library\mission-library\source\BasicSharedLibrary\BasicSharedLibrary.shproj", "{035A7C54-5161-4057-BB0D-20D39A607B50}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BasicSharedLibrary", "..\..\RTSCamera\source\library\mission-library\source\BasicSharedLibrary\BasicSharedLibrary.shproj", "{035A7C54-5161-4057-BB0D-20D39A607B50}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MissionLibrary", "library\mission-library\source\MissionLibrary\MissionLibrary.csproj", "{E9D4F7CC-4569-46ED-BA71-9CB116ED8F73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MissionLibrary", "..\..\RTSCamera\source\library\mission-library\source\MissionLibrary\MissionLibrary.csproj", "{E9D4F7CC-4569-46ED-BA71-9CB116ED8F73}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MissionSharedLibrary", "library\mission-library\source\MissionSharedLibrary\MissionSharedLibrary.shproj", "{BB80A10D-E971-4C13-8EA6-F31EF29BA86D}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MissionSharedLibrary", "..\..\RTSCamera\source\library\mission-library\source\MissionSharedLibrary\MissionSharedLibrary.shproj", "{BB80A10D-E971-4C13-8EA6-F31EF29BA86D}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		library\mission-library\source\BasicSharedLibrary\BasicSharedLibrary.projitems*{035a7c54-5161-4057-bb0d-20d39a607b50}*SharedItemsImports = 13
-		library\mission-library\source\BasicSharedLibrary\BasicSharedLibrary.projitems*{73a588cc-f638-46e0-b2d6-bb544e555802}*SharedItemsImports = 5
-		library\mission-library\source\MissionSharedLibrary\MissionSharedLibrary.projitems*{73a588cc-f638-46e0-b2d6-bb544e555802}*SharedItemsImports = 5
-		library\mission-library\source\MissionSharedLibrary\MissionSharedLibrary.projitems*{bb80a10d-e971-4c13-8ea6-f31ef29ba86d}*SharedItemsImports = 13
-		library\mission-library\source\BasicSharedLibrary\BasicSharedLibrary.projitems*{e9d4f7cc-4569-46ed-ba71-9cb116ed8f73}*SharedItemsImports = 5
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -38,5 +31,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D173DEB7-F6E0-41CE-AFDE-05BD26D5B8AB}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\RTSCamera\source\library\mission-library\source\BasicSharedLibrary\BasicSharedLibrary.projitems*{035a7c54-5161-4057-bb0d-20d39a607b50}*SharedItemsImports = 13
+		..\..\RTSCamera\source\library\mission-library\source\BasicSharedLibrary\BasicSharedLibrary.projitems*{73a588cc-f638-46e0-b2d6-bb544e555802}*SharedItemsImports = 5
+		..\..\RTSCamera\source\library\mission-library\source\MissionSharedLibrary\MissionSharedLibrary.projitems*{73a588cc-f638-46e0-b2d6-bb544e555802}*SharedItemsImports = 5
+		..\..\RTSCamera\source\library\mission-library\source\MissionSharedLibrary\MissionSharedLibrary.projitems*{bb80a10d-e971-4c13-8ea6-f31ef29ba86d}*SharedItemsImports = 13
+		..\..\RTSCamera\source\library\mission-library\source\BasicSharedLibrary\BasicSharedLibrary.projitems*{e9d4f7cc-4569-46ed-ba71-9cb116ed8f73}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
